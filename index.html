@@ -1,355 +1,528 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Infografis: Tren Linux dan Solusi Virtualisasi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FFFFFF; /* Energetic & Playful - Light Background */
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #ffffff; /* Energetic & Playful - Light Background */
+      }
+      .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        max-height: 400px;
+      }
+      @media (min-width: 768px) {
         .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
+          height: 350px;
         }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-        .flowchart-step {
-            border: 2px solid #008080; /* Energetic & Playful - Teal */
-            background-color: #F9FAFB; /* Card Background */
-            color: #1F2937; /* Text Color */
-        }
-        .flowchart-arrow {
-            color: #008080; /* Energetic & Playful - Teal */
-        }
-        .section-title {
-            color: #000080; /* Energetic & Playful - Dark Blue */
-        }
-        .highlight-stat {
-            color: #FF8C00; /* Energetic & Playful - Orange */
-        }
-        .card {
-            background-color: #F9FAFB; /* Card Background */
-        }
-        .primary-button {
-            background-color: #FF8C00; /* Energetic & Playful - Orange */
-            color: white;
-        }
-        .primary-button:hover {
-            background-color: #E07B00; /* Darker Orange */
-        }
-        .text-dark-blue { color: #000080; }
-        .text-teal { color: #008080; }
-        .text-orange { color: #FF8C00; }
-        .bg-dark-blue { background-color: #000080; }
-        .bg-teal { background-color: #008080; }
-        .bg-orange { background-color: #FF8C00; }
-        .bg-yellow { background-color: #FFD700; }
-        .border-teal { border-color: #008080; }
+      }
+      .flowchart-step {
+        border: 2px solid #008080; /* Energetic & Playful - Teal */
+        background-color: #f9fafb; /* Card Background */
+        color: #1f2937; /* Text Color */
+      }
+      .flowchart-arrow {
+        color: #008080; /* Energetic & Playful - Teal */
+      }
+      .section-title {
+        color: #000080; /* Energetic & Playful - Dark Blue */
+      }
+      .highlight-stat {
+        color: #ff8c00; /* Energetic & Playful - Orange */
+      }
+      .card {
+        background-color: #f9fafb; /* Card Background */
+      }
+      .primary-button {
+        background-color: #ff8c00; /* Energetic & Playful - Orange */
+        color: white;
+      }
+      .primary-button:hover {
+        background-color: #e07b00; /* Darker Orange */
+      }
+      .text-dark-blue {
+        color: #000080;
+      }
+      .text-teal {
+        color: #008080;
+      }
+      .text-orange {
+        color: #ff8c00;
+      }
+      .bg-dark-blue {
+        background-color: #000080;
+      }
+      .bg-teal {
+        background-color: #008080;
+      }
+      .bg-orange {
+        background-color: #ff8c00;
+      }
+      .bg-yellow {
+        background-color: #ffd700;
+      }
+      .border-teal {
+        border-color: #008080;
+      }
     </style>
-</head>
-<body class="text-gray-800">
-
+  </head>
+  <body class="text-gray-800">
     <header class="bg-dark-blue text-white py-8 shadow-lg">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl font-bold">Menguasai Linux: Tren dan Solusi Virtualisasi</h1>
-            <p class="mt-2 text-lg">Memahami Kebutuhan, Tantangan, dan Manfaat Sistem Operasi Linux melalui VirtualBox</p>
-        </div>
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl font-bold">
+          Menguasai Linux: Tren dan Solusi Virtualisasi
+        </h1>
+        <p class="mt-2 text-lg">
+          Memahami Kebutuhan, Tantangan, dan Manfaat Sistem Operasi Linux
+          melalui VirtualBox
+        </p>
+      </div>
     </header>
 
     <main class="container mx-auto px-6 py-12">
-        
-        <section id="kebutuhan-linux" class="mb-16">
-            <h2 class="text-3xl font-bold section-title text-center mb-2">Kebutuhan Akan Linux Semakin Meningkat</h2>
-            <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Sistem operasi open source seperti Linux semakin vital dalam dunia teknologi informasi. Dominasinya di berbagai sektor menunjukkan pentingnya penguasaan Linux untuk inovasi dan pengembangan teknologi.</p>
-            
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="card rounded-lg shadow-xl p-6">
-                    <h3 class="text-2xl font-semibold text-dark-blue mb-4">Dominasi Linux di Infrastruktur Global</h3>
-                    <div class="text-center">
-                        <p class="text-6xl font-bold highlight-stat">70%+ </p>
-                        <p class="text-xl text-gray-700 mt-2">Server Global Diperkirakan Menggunakan Linux</p>
-                        <p class="text-sm text-gray-500 mt-1">(Data Ilustratif)</p>
-                    </div>
-                    <p class="mt-4 text-gray-600">Linux menjadi tulang punggung bagi banyak layanan cloud, superkomputer, dan sistem embedded karena stabilitas, keamanan, dan fleksibilitasnya. Penguasaan Linux menjadi kunci dalam pengembangan aplikasi modern dan manajemen infrastruktur TI.</p>
-                </div>
-                <div class="card rounded-lg shadow-xl p-6">
-                    <h3 class="text-2xl font-semibold text-dark-blue mb-4">Mengapa Memilih Linux?</h3>
-                    <div class="chart-container h-[300px] md:h-[350px]">
-                        <canvas id="alasanAdopsiLinuxChart"></canvas>
-                    </div>
-                    <p class="mt-4 text-gray-600">Berbagai alasan mendorong adopsi Linux, mulai dari sifatnya yang open source, komunitas yang kuat, hingga tingkat keamanan yang tinggi. Grafik di atas (data ilustratif) menunjukkan beberapa faktor utama.</p>
-                </div>
-            </div>
-        </section>
+      <section id="kebutuhan-linux" class="mb-16">
+        <h2 class="text-3xl font-bold section-title text-center mb-2">
+          Kebutuhan Akan Linux Semakin Meningkat
+        </h2>
+        <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+          Sistem operasi open source seperti Linux semakin vital dalam dunia
+          teknologi informasi. Dominasinya di berbagai sektor menunjukkan
+          pentingnya penguasaan Linux untuk inovasi dan pengembangan teknologi.
+        </p>
 
-        <section id="tantangan-solusi" class="mb-16">
-            <h2 class="text-3xl font-bold section-title text-center mb-2">Tantangan Adopsi & Solusi Virtualisasi</h2>
-            <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Meskipun kebutuhannya tinggi, banyak pengguna menghadapi kendala dalam beralih ke Linux. Virtualisasi menawarkan solusi aman dan efisien untuk mempelajari dan bereksperimen dengan Linux tanpa risiko.</p>
-            
-            <div class="card rounded-lg shadow-xl p-6">
-                <h3 class="text-2xl font-semibold text-dark-blue mb-4">Perbandingan Metode Pembelajaran Linux</h3>
-                 <p class="text-gray-600 mb-6">VirtualBox menyediakan lingkungan yang terisolasi, memungkinkan pengguna untuk menginstal dan menjalankan Linux sebagai sistem operasi tamu di atas sistem operasi utama mereka. Ini mengurangi kekhawatiran akan kerusakan sistem dan mempermudah proses adaptasi.</p>
-                <div class="chart-container h-[350px] md:h-[400px]">
-                    <canvas id="metodePembelajaranChart"></canvas>
-                </div>
-                <p class="mt-4 text-sm text-gray-500 text-center">(Data Ilustratif)</p>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="card rounded-lg shadow-xl p-6">
+            <h3 class="text-2xl font-semibold text-dark-blue mb-4">
+              Dominasi Linux di Infrastruktur Global
+            </h3>
+            <div class="text-center">
+              <p class="text-6xl font-bold highlight-stat">70%+</p>
+              <p class="text-xl text-gray-700 mt-2">
+                Server Global Diperkirakan Menggunakan Linux
+              </p>
+              <p class="text-sm text-gray-500 mt-1">(Data Ilustratif)</p>
             </div>
-        </section>
+            <p class="mt-4 text-gray-600">
+              Linux menjadi tulang punggung bagi banyak layanan cloud,
+              superkomputer, dan sistem embedded karena stabilitas, keamanan,
+              dan fleksibilitasnya. Penguasaan Linux menjadi kunci dalam
+              pengembangan aplikasi modern dan manajemen infrastruktur TI.
+            </p>
+          </div>
+          <div class="card rounded-lg shadow-xl p-6">
+            <h3 class="text-2xl font-semibold text-dark-blue mb-4">
+              Mengapa Memilih Linux?
+            </h3>
+            <div class="chart-container h-[300px] md:h-[350px]">
+              <canvas id="alasanAdopsiLinuxChart"></canvas>
+            </div>
+            <p class="mt-4 text-gray-600">
+              Berbagai alasan mendorong adopsi Linux, mulai dari sifatnya yang
+              open source, komunitas yang kuat, hingga tingkat keamanan yang
+              tinggi. Grafik di atas (data ilustratif) menunjukkan beberapa
+              faktor utama.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <section id="studi-kasus" class="mb-16">
-            <h2 class="text-3xl font-bold section-title text-center mb-2">Studi Kasus: Instalasi Linux di VirtualBox</h2>
-            <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Proposal proyek "Instalasi Sistem Operasi Linux Pada Aplikasi VirtualBox" oleh mahasiswa Universitas Siber Asia menjadi contoh nyata bagaimana virtualisasi dapat dimanfaatkan untuk pembelajaran praktis.</p>
+      <section id="tantangan-solusi" class="mb-16">
+        <h2 class="text-3xl font-bold section-title text-center mb-2">
+          Tantangan Adopsi & Solusi Virtualisasi
+        </h2>
+        <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+          Meskipun kebutuhannya tinggi, banyak pengguna menghadapi kendala dalam
+          beralih ke Linux. Virtualisasi menawarkan solusi aman dan efisien
+          untuk mempelajari dan bereksperimen dengan Linux tanpa risiko.
+        </p>
+      </section>
 
-            <div class="card rounded-lg shadow-xl p-6 mb-10">
-                <h3 class="text-2xl font-semibold text-dark-blue mb-3">Tujuan Proyek</h3>
-                <p class="text-gray-700">Proyek ini bertujuan untuk memberikan panduan komprehensif dalam mengimplementasikan dan mengkonfigurasi sistem operasi Linux pada lingkungan virtual menggunakan VirtualBox. Fokus utamanya adalah memberikan pengetahuan praktis mengenai aplikasi simulasi VirtualBox dan proses instalasi Linux.</p>
-            </div>
-            
-            <div class="card rounded-lg shadow-xl p-6 mb-10">
-                <h3 class="text-2xl font-semibold text-dark-blue mb-6 text-center">Metodologi Proyek: Alur Instalasi</h3>
-                <div class="flex flex-col items-center space-y-4">
-                    <div class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow">Persiapan & Perencanaan</div>
-                    <div class="text-4xl flowchart-arrow">↓</div>
-                    <div class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow">Download & Instalasi VirtualBox</div>
-                    <div class="text-4xl flowchart-arrow">↓</div>
-                    <div class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow">Download File ISO OS Linux</div>
-                    <div class="text-4xl flowchart-arrow">↓</div>
-                    <div class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow">Setup Mesin Virtual di VirtualBox</div>
-                    <div class="text-4xl flowchart-arrow">↓</div>
-                    <div class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow">Instalasi OS Linux di Mesin Virtual</div>
-                    <div class="text-4xl flowchart-arrow">↓</div>
-                    <div class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow">Pengujian Sistem di Mesin Virtual</div>
-                    <div class="text-4xl flowchart-arrow">↓</div>
-                    <div class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow">Dokumentasi</div>
-                    <div class="text-4xl flowchart-arrow">↓</div>
-                    <div class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow">Evaluasi & Pembuatan Laporan Akhir</div>
-                </div>
-                 <p class="mt-6 text-gray-600">Diagram alir di atas menggambarkan langkah-langkah sistematis yang dilakukan dalam proyek, mulai dari persiapan awal hingga pelaporan akhir. Setiap tahapan memiliki penanggung jawab dan indikator capaian yang jelas.</p>
-            </div>
+      <section id="studi-kasus" class="mb-16">
+        <h2 class="text-3xl font-bold section-title text-center mb-2">
+          Studi Kasus: Instalasi Linux di VirtualBox
+        </h2>
+        <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+          Proposal proyek "Instalasi Sistem Operasi Linux Pada Aplikasi
+          VirtualBox" oleh mahasiswa Universitas Siber Asia menjadi contoh nyata
+          bagaimana virtualisasi dapat dimanfaatkan untuk pembelajaran praktis.
+        </p>
 
-            <div class="card rounded-lg shadow-xl p-6">
-                <h3 class="text-2xl font-semibold text-dark-blue mb-6 text-center">Tim Proyek (Pengusul)</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white p-4 rounded-lg shadow-md text-center border border-teal">
-                        <p class="font-semibold text-teal">Mohammad Bagus Andin Prakoso</p>
-                        <p class="text-sm text-gray-600">(Ketua)</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-md text-center border border-teal">
-                        <p class="font-semibold text-teal">Ijlal Windhi Saputra</p>
-                        <p class="text-sm text-gray-600">(Anggota)</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-md text-center border border-teal">
-                        <p class="font-semibold text-teal">Haidar Muhammad Naufal</p>
-                        <p class="text-sm text-gray-600">(Anggota)</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-md text-center border border-teal">
-                        <p class="font-semibold text-teal">Felian Biran</p>
-                        <p class="text-sm text-gray-600">(Anggota)</p>
-                    </div>
-                </div>
-                <p class="mt-6 text-gray-600">Tim ini bertanggung jawab atas pelaksanaan setiap tahapan proyek, mulai dari perencanaan, implementasi, hingga evaluasi dan pelaporan.</p>
-            </div>
-        </section>
+        <div class="card rounded-lg shadow-xl p-6 mb-10">
+          <h3 class="text-2xl font-semibold text-dark-blue mb-3">
+            Tujuan Proyek
+          </h3>
+          <p class="text-gray-700">
+            Proyek ini bertujuan untuk memberikan panduan komprehensif dalam
+            mengimplementasikan dan mengkonfigurasi sistem operasi Linux pada
+            lingkungan virtual menggunakan VirtualBox. Fokus utamanya adalah
+            memberikan pengetahuan praktis mengenai aplikasi simulasi VirtualBox
+            dan proses instalasi Linux.
+          </p>
+        </div>
 
-        <section id="dampak-manfaat" class="mb-16">
-            <h2 class="text-3xl font-bold section-title text-center mb-2">Dampak & Manfaat Proyek</h2>
-            <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Proyek instalasi Linux menggunakan VirtualBox ini memberikan kontribusi signifikan terhadap beberapa aspek penting, sejalan dengan Tujuan Pembangunan Berkelanjutan (SDGs) dan program Asta Cita.</p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="card rounded-lg shadow-xl p-6 text-center">
-                    <div class="text-5xl mb-4 text-orange">🎓</div>
-                    <h3 class="text-xl font-semibold text-dark-blue mb-2">Pendidikan Berkualitas (SDG 4)</h3>
-                    <p class="text-gray-600">Menyediakan akses ke teknologi informasi berbasis open source yang terjangkau, mendukung pembelajaran praktis, dan menjembatani kesenjangan digital.</p>
-                </div>
-                <div class="card rounded-lg shadow-xl p-6 text-center">
-                    <div class="text-5xl mb-4 text-teal">💼</div>
-                    <h3 class="text-xl font-semibold text-dark-blue mb-2">Pekerjaan Layak & Pertumbuhan Ekonomi (SDG 8)</h3>
-                    <p class="text-gray-600">Meningkatkan keterampilan digital dan daya saing di pasar kerja TI, serta mendukung pemberdayaan ekonomi melalui pengurangan ketergantungan pada solusi berbayar.</p>
-                </div>
-                <div class="card rounded-lg shadow-xl p-6 text-center">
-                    <div class="text-5xl mb-4 text-yellow">🏗️</div>
-                    <h3 class="text-xl font-semibold text-dark-blue mb-2">Industri, Inovasi & Infrastruktur (SDG 9)</h3>
-                    <p class="text-gray-600">Menyediakan fondasi untuk infrastruktur digital yang tangguh dan aman, mendukung inovasi teknologi, dan memfasilitasi transformasi digital.</p>
-                </div>
+        <div class="card rounded-lg shadow-xl p-6 mb-10">
+          <h3 class="text-2xl font-semibold text-dark-blue mb-6 text-center">
+            Metodologi Proyek: Alur Instalasi
+          </h3>
+          <div class="flex flex-col items-center space-y-4">
+            <div
+              class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow"
+            >
+              Persiapan & Perencanaan
             </div>
-            <p class="mt-8 text-center text-gray-700">Secara keseluruhan, pemahaman dan adopsi Linux melalui virtualisasi seperti VirtualBox tidak hanya meningkatkan kompetensi individu tetapi juga mendukung kemajuan teknologi dan ekonomi secara lebih luas.</p>
-        </section>
+            <div class="text-4xl flowchart-arrow">↓</div>
+            <div
+              class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow"
+            >
+              Download & Instalasi VirtualBox
+            </div>
+            <div class="text-4xl flowchart-arrow">↓</div>
+            <div
+              class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow"
+            >
+              Download File ISO OS Linux
+            </div>
+            <div class="text-4xl flowchart-arrow">↓</div>
+            <div
+              class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow"
+            >
+              Setup Mesin Virtual di VirtualBox
+            </div>
+            <div class="text-4xl flowchart-arrow">↓</div>
+            <div
+              class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow"
+            >
+              Instalasi OS Linux di Mesin Virtual
+            </div>
+            <div class="text-4xl flowchart-arrow">↓</div>
+            <div
+              class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow"
+            >
+              Pengujian Sistem di Mesin Virtual
+            </div>
+            <div class="text-4xl flowchart-arrow">↓</div>
+            <div
+              class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow"
+            >
+              Dokumentasi
+            </div>
+            <div class="text-4xl flowchart-arrow">↓</div>
+            <div
+              class="flowchart-step w-full md:w-3/4 lg:w-1/2 text-center p-4 rounded-lg shadow"
+            >
+              Evaluasi & Pembuatan Laporan Akhir
+            </div>
+          </div>
+          <p class="mt-6 text-gray-600">
+            Diagram alir di atas menggambarkan langkah-langkah sistematis yang
+            dilakukan dalam proyek, mulai dari persiapan awal hingga pelaporan
+            akhir. Setiap tahapan memiliki penanggung jawab dan indikator
+            capaian yang jelas.
+          </p>
+        </div>
+
+        <div class="card rounded-lg shadow-xl p-6">
+          <h3 class="text-2xl font-semibold text-dark-blue mb-6 text-center">
+            Tim Proyek (Pengusul)
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="bg-white p-4 rounded-lg shadow-md text-center border border-teal"
+            >
+              <p class="font-semibold text-teal">
+                Mohammad Bagus Andin Prakoso
+              </p>
+              <p class="text-sm text-gray-600">(Ketua)</p>
+            </div>
+            <div
+              class="bg-white p-4 rounded-lg shadow-md text-center border border-teal"
+            >
+              <p class="font-semibold text-teal">Ijlal Windhi Saputra</p>
+              <p class="text-sm text-gray-600">(Anggota)</p>
+            </div>
+            <div
+              class="bg-white p-4 rounded-lg shadow-md text-center border border-teal"
+            >
+              <p class="font-semibold text-teal">Haidar Muhammad Naufal</p>
+              <p class="text-sm text-gray-600">(Anggota)</p>
+            </div>
+            <div
+              class="bg-white p-4 rounded-lg shadow-md text-center border border-teal"
+            >
+              <p class="font-semibold text-teal">Felian Biran</p>
+              <p class="text-sm text-gray-600">(Anggota)</p>
+            </div>
+          </div>
+          <p class="mt-6 text-gray-600">
+            Tim ini bertanggung jawab atas pelaksanaan setiap tahapan proyek,
+            mulai dari perencanaan, implementasi, hingga evaluasi dan pelaporan.
+          </p>
+        </div>
+      </section>
+
+      <section id="dampak-manfaat" class="mb-16">
+        <h2 class="text-3xl font-bold section-title text-center mb-2">
+          Dampak & Manfaat Proyek
+        </h2>
+        <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+          Proyek instalasi Linux menggunakan VirtualBox ini memberikan
+          kontribusi signifikan terhadap beberapa aspek penting, sejalan dengan
+          Tujuan Pembangunan Berkelanjutan (SDGs) dan program Asta Cita.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="card rounded-lg shadow-xl p-6 text-center">
+            <div class="text-5xl mb-4 text-orange">🎓</div>
+            <h3 class="text-xl font-semibold text-dark-blue mb-2">
+              Pendidikan Berkualitas (SDG 4)
+            </h3>
+            <p class="text-gray-600">
+              Menyediakan akses ke teknologi informasi berbasis open source yang
+              terjangkau, mendukung pembelajaran praktis, dan menjembatani
+              kesenjangan digital.
+            </p>
+          </div>
+          <div class="card rounded-lg shadow-xl p-6 text-center">
+            <div class="text-5xl mb-4 text-teal">💼</div>
+            <h3 class="text-xl font-semibold text-dark-blue mb-2">
+              Pekerjaan Layak & Pertumbuhan Ekonomi (SDG 8)
+            </h3>
+            <p class="text-gray-600">
+              Meningkatkan keterampilan digital dan daya saing di pasar kerja
+              TI, serta mendukung pemberdayaan ekonomi melalui pengurangan
+              ketergantungan pada solusi berbayar.
+            </p>
+          </div>
+          <div class="card rounded-lg shadow-xl p-6 text-center">
+            <div class="text-5xl mb-4 text-yellow">🏗️</div>
+            <h3 class="text-xl font-semibold text-dark-blue mb-2">
+              Industri, Inovasi & Infrastruktur (SDG 9)
+            </h3>
+            <p class="text-gray-600">
+              Menyediakan fondasi untuk infrastruktur digital yang tangguh dan
+              aman, mendukung inovasi teknologi, dan memfasilitasi transformasi
+              digital.
+            </p>
+          </div>
+        </div>
+        <p class="mt-8 text-center text-gray-700">
+          Secara keseluruhan, pemahaman dan adopsi Linux melalui virtualisasi
+          seperti VirtualBox tidak hanya meningkatkan kompetensi individu tetapi
+          juga mendukung kemajuan teknologi dan ekonomi secara lebih luas.
+        </p>
+      </section>
     </main>
 
     <footer class="bg-dark-blue text-white py-8 text-center">
-        <p>&copy; 2025 Universitas Siber Asia - Proyek Organisasi dan Arsitektur Komputer.</p>
-        <p class="text-sm opacity-75">Infografis ini diadaptasi dari proposal mahasiswa.</p>
+      <p>
+        &copy; 2025 Universitas Siber Asia - Proyek Organisasi dan Arsitektur
+        Komputer.
+      </p>
+      <p class="text-sm opacity-75">
+        Infografis ini diadaptasi dari proposal mahasiswa.
+      </p>
     </footer>
 
     <script>
-        function processLabel(label, maxLength = 16) {
-            if (typeof label !== 'string' || label.length <= maxLength) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + word).length > maxLength && currentLine.length > 0) {
-                    lines.push(currentLine.trim());
-                    currentLine = word + ' ';
-                } else {
-                    currentLine += word + ' ';
-                }
-            }
-            if (currentLine.trim().length > 0) {
-                lines.push(currentLine.trim());
-            }
-            return lines.length > 0 ? lines : [label]; 
+      function processLabel(label, maxLength = 16) {
+        if (typeof label !== "string" || label.length <= maxLength) {
+          return label;
         }
+        const words = label.split(" ");
+        const lines = [];
+        let currentLine = "";
+        for (const word of words) {
+          if (
+            (currentLine + word).length > maxLength &&
+            currentLine.length > 0
+          ) {
+            lines.push(currentLine.trim());
+            currentLine = word + " ";
+          } else {
+            currentLine += word + " ";
+          }
+        }
+        if (currentLine.trim().length > 0) {
+          lines.push(currentLine.trim());
+        }
+        return lines.length > 0 ? lines : [label];
+      }
 
-        const tooltipTitleCallback = function(tooltipItems) {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-                return label.join(' ');
-            } else {
-                return label;
-            }
-        };
+      const tooltipTitleCallback = function (tooltipItems) {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        if (Array.isArray(label)) {
+          return label.join(" ");
+        } else {
+          return label;
+        }
+      };
 
-        const commonChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#1F2937', // Text Color
-                        font: { size: 12 }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        title: tooltipTitleCallback
-                    },
-                    backgroundColor: 'rgba(0,0,0,0.7)',
-                    titleFont: { size: 14 },
-                    bodyFont: { size: 12 },
-                    padding: 10
-                }
+      const commonChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            labels: {
+              color: "#1F2937", // Text Color
+              font: { size: 12 },
             },
-            scales: {
-                y: {
-                    ticks: { color: '#4B5563', font: {size: 10} }, // Gray-600
-                    grid: { color: '#D1D5DB' } // Gray-300
-                },
-                x: {
-                    ticks: { color: '#4B5563', font: {size: 10} }, // Gray-600
-                    grid: { color: '#E5E7EB' } // Gray-200
-                }
-            }
-        };
-        
-        // Chart: Alasan Adopsi Linux (Donut)
-        const alasanLabels = ['Open Source & Gratis', 'Keamanan Tinggi', 'Stabilitas & Kinerja', 'Komunitas Besar', 'Fleksibilitas Tinggi'].map(label => processLabel(label));
-        const alasanData = {
-            labels: alasanLabels,
-            datasets: [{
-                label: 'Alasan Adopsi Linux (Ilustratif)',
-                data: [35, 25, 20, 15, 5], // Illustrative data
-                backgroundColor: [
-                    '#FF8C00', // Orange
-                    '#008080', // Teal
-                    '#FFD700', // Yellow
-                    '#4682B4', // SteelBlue (variation of blue)
-                    '#000080'  // Dark Blue
-                ],
-                borderColor: '#FFFFFF',
-                borderWidth: 2,
-                hoverOffset: 4
-            }]
-        };
-        new Chart(document.getElementById('alasanAdopsiLinuxChart'), {
-            type: 'doughnut',
-            data: alasanData,
-            options: {
-                ...commonChartOptions,
-                cutout: '60%',
-                 plugins: { // Ensure tooltip callback is correctly nested
-                    legend: { display: true, position: 'bottom', labels: { color: '#1F2937', font: {size: 10}} },
-                    tooltip: {
-                        callbacks: {
-                            title: tooltipTitleCallback
-                        }
-                    }
-                }
-            }
-        });
+          },
+          tooltip: {
+            callbacks: {
+              title: tooltipTitleCallback,
+            },
+            backgroundColor: "rgba(0,0,0,0.7)",
+            titleFont: { size: 14 },
+            bodyFont: { size: 12 },
+            padding: 10,
+          },
+        },
+        scales: {
+          y: {
+            ticks: { color: "#4B5563", font: { size: 10 } }, // Gray-600
+            grid: { color: "#D1D5DB" }, // Gray-300
+          },
+          x: {
+            ticks: { color: "#4B5563", font: { size: 10 } }, // Gray-600
+            grid: { color: "#E5E7EB" }, // Gray-200
+          },
+        },
+      };
 
-        // Chart: Metode Pembelajaran Linux (Bar)
-        const metodeLabels = ['Dual Boot Sistem', 'Mesin Fisik Dedikasi', 'VirtualBox/VMware', 'Cloud Platform (VPS)'].map(label => processLabel(label));
-        const metodeData = {
-            labels: metodeLabels,
-            datasets: [
-                {
-                    label: 'Tingkat Keamanan (Ilustratif)',
-                    data: [6, 7, 9, 8], // Illustrative data
-                    backgroundColor: '#FF8C00', // Orange
-                    borderColor: '#E07B00',
-                    borderWidth: 1
-                },
-                {
-                    label: 'Efisiensi Sumber Daya (Ilustratif)',
-                    data: [5, 4, 8, 7], // Illustrative data
-                    backgroundColor: '#008080', // Teal
-                    borderColor: '#006666',
-                    borderWidth: 1
-                },
-                {
-                    label: 'Fleksibilitas (Ilustratif)',
-                    data: [7, 6, 9, 9], // Illustrative data
-                    backgroundColor: '#FFD700', // Yellow
-                    borderColor: '#E6C300',
-                    borderWidth: 1
-                }
-            ]
-        };
-        new Chart(document.getElementById('metodePembelajaranChart'), {
-            type: 'bar',
-            data: metodeData,
-            options: {
-                ...commonChartOptions,
-                scales: {
-                    y: { 
-                        beginAtZero: true, 
-                        max: 10,
-                        ticks: { color: '#4B5563', font: {size: 10} },
-                        grid: { color: '#D1D5DB' }
-                    },
-                    x: {
-                        ticks: { color: '#4B5563', font: {size: 10}, autoSkip: false, maxRotation: 0, minRotation: 0 },
-                        grid: { display: false }
-                    }
-                },
-                 plugins: { // Ensure tooltip callback is correctly nested
-                    legend: { display: true, position: 'top', labels: { color: '#1F2937', font: {size: 10}} },
-                    tooltip: {
-                        callbacks: {
-                            title: tooltipTitleCallback
-                        }
-                    }
-                }
-            }
-        });
+      // Chart: Alasan Adopsi Linux (Donut)
+      const alasanLabels = [
+        "Open Source & Gratis",
+        "Keamanan Tinggi",
+        "Stabilitas & Kinerja",
+        "Komunitas Besar",
+        "Fleksibilitas Tinggi",
+      ].map((label) => processLabel(label));
+      const alasanData = {
+        labels: alasanLabels,
+        datasets: [
+          {
+            label: "Alasan Adopsi Linux (Ilustratif)",
+            data: [35, 25, 20, 15, 5], // Illustrative data
+            backgroundColor: [
+              "#FF8C00", // Orange
+              "#008080", // Teal
+              "#FFD700", // Yellow
+              "#4682B4", // SteelBlue (variation of blue)
+              "#000080", // Dark Blue
+            ],
+            borderColor: "#FFFFFF",
+            borderWidth: 2,
+            hoverOffset: 4,
+          },
+        ],
+      };
+      new Chart(document.getElementById("alasanAdopsiLinuxChart"), {
+        type: "doughnut",
+        data: alasanData,
+        options: {
+          ...commonChartOptions,
+          cutout: "60%",
+          plugins: {
+            // Ensure tooltip callback is correctly nested
+            legend: {
+              display: true,
+              position: "bottom",
+              labels: { color: "#1F2937", font: { size: 10 } },
+            },
+            tooltip: {
+              callbacks: {
+                title: tooltipTitleCallback,
+              },
+            },
+          },
+        },
+      });
 
+      // Chart: Metode Pembelajaran Linux (Bar)
+      const metodeLabels = [
+        "Dual Boot Sistem",
+        "Mesin Fisik Dedikasi",
+        "VirtualBox/VMware",
+        "Cloud Platform (VPS)",
+      ].map((label) => processLabel(label));
+      const metodeData = {
+        labels: metodeLabels,
+        datasets: [
+          {
+            label: "Tingkat Keamanan (Ilustratif)",
+            data: [6, 7, 9, 8], // Illustrative data
+            backgroundColor: "#FF8C00", // Orange
+            borderColor: "#E07B00",
+            borderWidth: 1,
+          },
+          {
+            label: "Efisiensi Sumber Daya (Ilustratif)",
+            data: [5, 4, 8, 7], // Illustrative data
+            backgroundColor: "#008080", // Teal
+            borderColor: "#006666",
+            borderWidth: 1,
+          },
+          {
+            label: "Fleksibilitas (Ilustratif)",
+            data: [7, 6, 9, 9], // Illustrative data
+            backgroundColor: "#FFD700", // Yellow
+            borderColor: "#E6C300",
+            borderWidth: 1,
+          },
+        ],
+      };
+      new Chart(document.getElementById("metodePembelajaranChart"), {
+        type: "bar",
+        data: metodeData,
+        options: {
+          ...commonChartOptions,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 10,
+              ticks: { color: "#4B5563", font: { size: 10 } },
+              grid: { color: "#D1D5DB" },
+            },
+            x: {
+              ticks: {
+                color: "#4B5563",
+                font: { size: 10 },
+                autoSkip: false,
+                maxRotation: 0,
+                minRotation: 0,
+              },
+              grid: { display: false },
+            },
+          },
+          plugins: {
+            // Ensure tooltip callback is correctly nested
+            legend: {
+              display: true,
+              position: "top",
+              labels: { color: "#1F2937", font: { size: 10 } },
+            },
+            tooltip: {
+              callbacks: {
+                title: tooltipTitleCallback,
+              },
+            },
+          },
+        },
+      });
     </script>
-</body>
+  </body>
 </html>
